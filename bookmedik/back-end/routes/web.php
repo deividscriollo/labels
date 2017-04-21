@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//-------------------------------- Pacientes--------------------------------
+Route::get('/Add_Paciente/{datos}', function ($datos) {
+    // return view('welcome');
+    // return "en proceso generacion";
+    $arrayName = array('hola' => $datos);
+
+    // return response()->json($arrayName);
+    return $arrayName;
+});
