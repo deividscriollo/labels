@@ -16,11 +16,13 @@ Route::get('/', function () {
 });
 
 //-------------------------------- Pacientes--------------------------------
-Route::get('/Add_Paciente/{datos}', function ($datos) {
-    // return view('welcome');
-    // return "en proceso generacion";
-    $arrayName = array('hola' => $datos);
+// Route::get('/Add_Paciente', function ($datos) {
+//     return view('welcome');
+//     return "en proceso generacion";
+//     $arrayName = array('hola' => $datos);
 
-    // return response()->json($arrayName);
-    return $arrayName;
-});
+//     return response()->json($arrayName);
+//     return $arrayName;
+// });
+
+Route::resource('/Pacientes', 'Pacientes');

@@ -1,35 +1,46 @@
-<div class=login-overlay>
-    <div class=logo> Material
-        <br> <span class=smaller>Dashboard</span> </div>
-    <div class="form-container shadow">
-        <div class=icon> <i class="mdi mdi-account-circle"></i>
-            <div class=header> Login </div>
+<md-toolbar layout="row" layout-align="center center">
+    <div flex-gt-sm="90" flex-gt-md="80">
+        <div class="md-toolbar-tools md-toolbar-registro">
+            <h3>...</h3>
+            <span flex></span>
         </div>
-        <div class=inputs>
-            <form style="display: flex; justify-content: center;">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-                    <md-input-container>
-                        <input ng-model=user.mail type=email placeholder=email> </md-input-container>
-                </div>
-            </form>
-            <form style="display: flex; justify-content: center;">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-                    <md-input-container>
-                        <input ng-model=user.password type=password placeholder=password> </md-input-container>
-                </div>
-            </form>
-            <div class=buttons>
-                <md-checkbox ng-model=data.cb1 aria-label="Checkbox 1"> Remember Me </md-checkbox> <span class=signup> <a ui-sref=signup>Sign up here</a> </span>
-                <div class=link>
-                    <div class=link style=padding-bottom:0;>
-                        <md-button class="md-raised primary" ui-sref=home> Login </md-button>
+        <md-tabs class="md-primary" md-selected="data.selectedIndex" md-center-tabs="true" md-selected="2">
+            <md-tab id="tab1" aria-controls="tab1-content">
+                <md-icon>dns</md-icon>
+                Para Empresas
+            </md-tab>
+            
+            <md-tab id="tab2" aria-controls="tab2-content">
+                <md-icon>account_box</md-icon>
+                Para Personas
+            </md-tab>
+            <md-tab id="tab3" aria-controls="tab3-content">
+                <md-icon>assignment_ind</md-icon>
+                Quienes Somos
+            </md-tab>
+        </md-tabs>
+    </div>
+</md-toolbar>
+<md-content flex layout="row">
+    <md-content flex>
+        <div layout="row" layout-align="center center">
+            <div flex="60">
+                <ng-switch on="data.selectedIndex" class="tabpanel-container">
+                    <md-content id="tab1-content" aria-labelledby="tab1" ng-switch-when="0">
+                        hola mundo
+                    </md-content>
+                    <div id="tab2-content" aria-labelledby="tab2" ng-switch-when="1">
+                        migratorium blas
                     </div>
-                </div>
+                    <div id="tab3-content" aria-labelledby="tab3" ng-switch-when="3">
+                        hola tab3
+                    </div>
+                </ng-switch>
             </div>
         </div>
-    </div>
-    <footer class=login-footer>
-        <div class=left-section> &copy; Material Dashboard Theme </div>
-        <div class=right-section> Terms and Conditions Apply </div>
-    </footer>
-</div>
+        </div>
+    </md-content>
+    <style type="text/css">
+        .carddemoBasicUsage .card-media {
+  background-color: #999999; }
+    </style>

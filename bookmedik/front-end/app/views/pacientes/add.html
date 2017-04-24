@@ -1,0 +1,42 @@
+<md-dialog aria-label="FormProductos">
+    <form name="form_pacientes" ng-submit="Add_()">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Nuevo</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon aria-label="Close dialog">close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content" layout-padding>
+                <div layout="row">
+                    <md-input-container class="md-icon-float md-block" flex>
+                        <md-icon class="md-primary">view_compact</md-icon>
+                        <label>Nombre</label>
+                        <input name="nombre" ng-model="data.nombre" type="text" required marca-validator>
+                        <div ng-messages="form_pacientes.nombre.$error" ng-show="form_pacientes.nombre.$dirty">
+                            <div ng-message="required">Campo Requerido</div>
+                            <div ng-message="campo">Registro Repetido</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-icon-float md-block" flex>
+                        <md-icon class="md-primary">view_compact</md-icon>
+                        <label>Apellido</label>
+                        <input name="apellido" ng-model="data.apellido" type="text" required marca-validator>
+                        <div ng-messages="form_pacientes.apellido.$error" ng-show="form_pacientes.apellido.$dirty">
+                            <div ng-message="required">Campo Requerido</div>
+                            <div ng-message="campo">Registro Repetido</div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <md-button ng-click="cancel()">Cancelar</md-button>
+            <md-button type="reset">Limpiar</md-button>
+            <md-button class="md-raised md-primary" type="submit" ng-disabled="form_pacientes.$invalid">Guardar</md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

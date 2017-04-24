@@ -22,23 +22,46 @@ var app = angular.module('bookmedikApp', [
                                           'route-segment',
                                           'view-segment'
                                         ])
+  // theme config
+app.config(function($mdThemingProvider) {
+    $mdThemingProvider.theme('default')
+        .primaryPalette('pink', {
+            'default': '700', // by default use shade 400 from the pink palette for primary intentions
+            'hue-1': '100', // use shade 100 for the <code>md-hue-1</code> class
+            'hue-2': '600', // use shade 600 for the <code>md-hue-2</code> class
+            'hue-3': 'A100' // use shade A100 for the <code>md-hue-3</code> class
+        })
+        // If you specify less than all of the keys, it will inherit from the
+        // default shades
+        .accentPalette('pink', {
+            'default': '600' // use shade 200 for default, and keep all other shades the same
+        });
+});
+
   app.config(function ($routeSegmentProvider) {
     $routeSegmentProvider.
-        when('/section1',          's1').
-        when('/section1/prefs',    's1.prefs').
+        when('/',          'inicio').
+        when('/dc',          'dc').
+        when('/dc/Pacientes',          'dc.pacientes').
+        // when('/dc/Pacientes',    's1.prefs').
         when('/section1/:id',      's1.itemInfo').
         when('/section1/:id/edit', 's1.itemInfo.edit').
         when('/section2',          's2').
-        segment('s1', {
-            templateUrl: 'templates/section1.html',
+        segment('inicio', {
+            templateUrl: 'views/main.html',
+            // controller: 'MainCtrl'
+        }).
+        segment('dc', {
+            templateUrl: 'views/app.html',
             controller: 'MainCtrl'}).
         within().
-            segment('home', {
+            segment('pacientes', {
                 default: true,
-                templateUrl: 'templates/section1/home.html'}).
+                controller: 'PacientesCtrl',
+                templateUrl: 'views/pacientes/index.html'}).
 
             segment('itemInfo', {
-                templateUrl: 'templates/section1/item.html',
+                templateUrl: 'views/section1/item.html',
                 controller: 'Section1ItemCtrl',
                 dependencies: ['id']}).
 
@@ -46,20 +69,20 @@ var app = angular.module('bookmedikApp', [
 
                 segment('overview', {
                     default: true,
-                    templateUrl: 'templates/section1/item/overview.html'}).
+                    templateUrl: 'views/section1/item/overview.html'}).
 
                 segment('edit', {
-                     templateUrl: 'templates/section1/item/edit.html'}).
+                     templateUrl: 'views/section1/item/edit.html'}).
 
                 up().
 
             segment('prefs', {
-                templateUrl: 'templates/section1/prefs.html'}).
+                templateUrl: 'views/section1/prefs.html'}).
 
             up().
 
         segment('s2', {
-            templateUrl: 'templates/section2.html',
+            templateUrl: 'views/section2.html',
             controller: 'MainCtrl'
           });
     });

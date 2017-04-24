@@ -12,10 +12,11 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="bookmedikApp" >
+  <body ng-app="bookmedikApp">
     <div app-view-segment="0" layout="column" layout-fill></div>
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -55,6 +56,9 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/pacientes_.js"></script>
+        <script src="scripts/services/service_pacientes.js"></script>
+        <script src="scripts/services/serviceurl.js"></script>
         <!-- endbuild -->
 </body>
 </html>

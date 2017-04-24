@@ -7,11 +7,7 @@
  * # MainCtrl
  * Controller of the bookmedikApp
  */
-angular.module('bookmedikApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+var app = angular.module('bookmedikApp')
+  	app.controller('MainCtrl', function () {
+    	console.log('test main');
+  	});
