@@ -1,3 +1,14 @@
+// var mongoose = require('mongoose');
+// var Schema   = mongoose.Schema;
+
+// var pacienteSchema = new Schema({
+// 	'carDoor' : Number,
+// 	'color' : String
+// });
+
+// module.exports = mongoose.model('paciente', pacienteSchema);
+
+
 module.exports = function(){
 	var db = require("./../libs/connect_db")();
 
@@ -16,5 +27,5 @@ module.exports = function(){
 		phone:{casa:String, movil:String},
 		updated_at: { type: Date, default: Date.now }
 	});
-	return db.model('Medicos', Medico);
+	return db.model('paciente', Medico);
 }

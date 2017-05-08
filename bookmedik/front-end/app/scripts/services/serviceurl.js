@@ -13,7 +13,7 @@ var app = angular.module('bookmedikApp')
 	    this.server=function() {
 	        return {
 	            app: function() {
-	                return "http://localhost:8000/index.php/";
+	                return "http://localhost:3000/";
 	            }
 	            
 	        }

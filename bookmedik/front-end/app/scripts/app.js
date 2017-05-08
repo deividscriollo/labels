@@ -43,6 +43,7 @@ app.config(function($mdThemingProvider) {
         when('/',          'inicio').
         when('/dc',          'dc').
         when('/dc/Pacientes',          'dc.pacientes').
+        when('/dc/Medicos',          'dc.medicos').
         // when('/dc/Pacientes',    's1.prefs').
         when('/section1/:id',      's1.itemInfo').
         when('/section1/:id/edit', 's1.itemInfo.edit').
@@ -59,6 +60,11 @@ app.config(function($mdThemingProvider) {
                 default: true,
                 controller: 'PacientesCtrl',
                 templateUrl: 'views/pacientes/index.html'}).
+            segment('medicos', {
+                default: true,
+                controller: 'MedicosCtrl',
+                templateUrl: 'views/medicos/index.html'
+              }).
 
             segment('itemInfo', {
                 templateUrl: 'views/section1/item.html',

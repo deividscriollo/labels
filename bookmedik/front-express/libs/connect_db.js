@@ -2,7 +2,7 @@
 	var mongoose = require('mongoose');
 	var db;
 
-	module.export = function(){
+	module.exports = function(){
 		if (!db) {
 			db = mongoose.connect('mongodb://localhost/bookmedik');
 		}
